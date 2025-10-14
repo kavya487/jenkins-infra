@@ -6,12 +6,15 @@ terraform {
     }
   }
 
-  backend "s3" {
-    bucket = "82s-tf-remote-state-dev"
-    key    = "expense-dev-ecr" # you should have unique keys with in the bucket, same key should not be used in other repos or tf projects
+
+ backend "s3" {
+    bucket = "divya-tf-remote-states"
+    key    = "remote-roboshop-jenkins"
     region = "us-east-1"
-    dynamodb_table = "82s-tf-remote-state-dev"
-  }
+    encrypt      = true  
+    use_lockfile = true  #S3 native locking
+    # dynamodb_table = "daws2025.online-stat
+}
 }
 
 provider "aws" {
