@@ -8,10 +8,11 @@ terraform {
 
 
 backend "s3" {
-    bucket = "divya-tf-remote-states"
-    key    = "tsools-cicd" # you should have unique keys with in the bucket, same key should not be used in other repos or tf projects
+    bucket = "suneetha"
+    key    = "koti" # you should have unique keys with in the bucket, same key should not be used in other repos or tf projects
     region = "us-east-1"
-    dynamodb_table = "kavyas-tf-remote-state-dev"
+    encrypt      = true
+     use_lockfile = true 
   }
 }
 

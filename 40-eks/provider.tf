@@ -8,15 +8,16 @@ terraform {
 
 
 
- backend "s3" {
-    bucket = "divya-tf-remote-states"
-    key    = "remote-roboshop-jenkins"
+backend "s3" {
+    bucket = "suneetha"
+    key    = "koti" # you should have unique keys with in the bucket, same key should not be used in other repos or tf projects
     region = "us-east-1"
-    encrypt      = true  
-    use_lockfile = true  #S3 native locking
-    # dynamodb_table = "daws2025.online-stat
+    encrypt      = true
+     use_lockfile = true 
+  }
 }
-}
+
+
 
 provider "aws" {
   # Configuration options
